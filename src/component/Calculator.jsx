@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { add, divide, multiply, subtract } from "../redux/action";
 
 export const Calculator = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState();
 //   console.log(typeof value)
   const dispatch = useDispatch();
   const handlechange = (e) => {
@@ -40,6 +40,7 @@ export const Calculator = () => {
         onClick={() => {
           dispatch(divide(value));
         }}
+        disabled={count<value}
       >
         DIVIDE
       </button>
